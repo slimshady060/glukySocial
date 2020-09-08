@@ -1,0 +1,25 @@
+.example-card {
+  max-width:  35rem;
+}
+
+.example-header-image {
+  background-size: cover;
+}
+
+.favorites-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: -10px 0 10px -15px;
+
+  .favorite-total {
+    padding-left: .3rem;
+  }
+}
+
+
+.actions-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}

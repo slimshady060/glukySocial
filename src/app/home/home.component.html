@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="cards-container">
+    <app-card *ngFor="let item of arrayPostsElements"
+      class="card-item"
+      urlImge = '{{ item.image }}'
+      likes = '{{ item.likes }}'
+      text =  '{{ item.text }}'
+      datePublic = '{{ item.publishDate | date }}'
+      owner = '{{ item.owner.firstName }} {{item.owner.lastName }}'
+      pictureOwner = '{{ item.owner.picture}}'
+    ></app-card>
+  </div>
+  <div class="news-container">
+   <div class="title-container">
+     <h1 class="title">BBC News</h1>
+   </div>
+   <div class="card-news-container">
+    <app-card-news *ngFor="let item of arrayNews"
+      newsTitle= "{{item.title}}"
+      newsText= "{{item.description}}"
+      newsImageUrl= "{{ item.urlToImage }}"
+      newsLink= "{{item.url}}"
+    ></app-card-news>
+  </div>
+</div>

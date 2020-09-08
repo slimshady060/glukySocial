@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "glukysocial-f6a3b": {
+      "hosting": {
+        "gluky-social": [
+          "glukysocial-f6a3b"
+        ]
+      }
+    }
+  }
+}

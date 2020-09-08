@@ -1,0 +1,20 @@
+<mat-card class="card-container">
+  <mat-card-content class="news-content">
+    <div class="news-image">
+      <img class="news-image" src="{{ newsImageUrl }}">
+    </div>
+    <div class="text-content">
+      <div class="title-news">
+        <h1 class="title">{{ newsTitle }}</h1>
+      </div>
+      <div class="text">
+        <p>
+         {{ newsText }}
+        </p>
+      </div>
+    </div>
+  </mat-card-content>
+  <div class="link">
+    <a href="{{ newsLink }}"> Go to news </a>
+  </div>
+</mat-card>
