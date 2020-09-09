@@ -11,11 +11,29 @@ import {MatIconModule} from '@angular/material/icon';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ApiDummyInterceptor } from './interceptors/api-dummy.interceptor';
 import {MatCardModule} from '@angular/material/card';
+import { NgxContentLoadingModule } from 'ngx-content-loading';
+import { PersonsComponent } from './persons/persons.component';
+import { CardPersonComponent } from './shared/card-person/card-person.component';
+import { CardComponent } from './shared/card/card.component';
+import { HomeModule } from './home/home.module';
+import { MessagesComponent } from './messages/messages.component';
+import { MainComponent } from './main/main.component';
+import { BaseComponent } from './base/base.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AngularFireModule } from '@angular/fire';
+import { environment } from '../environments/environment';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent
+    NavbarComponent,
+    PersonsComponent,
+    CardPersonComponent,
+    MessagesComponent,
+    MainComponent,
+    BaseComponent
   ],
   imports: [
     BrowserModule,
@@ -24,7 +42,13 @@ import {MatCardModule} from '@angular/material/card';
     BrowserAnimationsModule,
     MatButtonModule,
     MatCardModule,
-    MatIconModule
+    NgxContentLoadingModule,
+    HomeModule,
+    ReactiveFormsModule,
+    MatIconModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireAuthModule
+
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: ApiDummyInterceptor, multi: true },

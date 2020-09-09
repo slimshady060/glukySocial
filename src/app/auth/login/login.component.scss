@@ -1,0 +1,40 @@
+.container-login {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  height: 100%;
+
+  .image-social {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;    
+    background-image: url('https://image.isu.pub/170915113918-76691adf881a7731f19a1a4988bc685c/jpg/page_1.jpg');
+    width: 55%;
+    background-size: cover;
+  }
+
+  .form-login {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 45%;
+
+    
+
+    .login-text {
+      text-align: center;
+    }
+
+    .error {
+      @extend .login-text;
+      color:red;
+    }
+
+    .form-content {
+      margin: 0 auto;
+      width: 60%;
+    }
+  }
+}

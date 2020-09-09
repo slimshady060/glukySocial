@@ -1,0 +1,23 @@
+.picture-profile {
+  background-size: cover;
+}
+
+.card-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  .profile-content {
+    display: flex;
+    flex-direction: row;
+
+    .info-content {
+      margin-left: 10px;
+    }
+
+  }
+
+  .follow-btn {
+    height: fit-content;
+  }
+}

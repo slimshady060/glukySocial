@@ -1,9 +1,12 @@
 <div class="container">
-  <div class="cards-container">
+  <div class="spinner">
+    <mat-spinner *ngIf="loading"></mat-spinner>
+  </div>
+  <div class="cards-container" *ngIf="!loading">
     <app-card *ngFor="let item of arrayPostsElements"
       class="card-item"
       urlImge = '{{ item.image }}'
-      likes = '{{ item.likes }}'
+      likes = '{{ item.likes | number }}'
       text =  '{{ item.text }}'
       datePublic = '{{ item.publishDate | date }}'
       owner = '{{ item.owner.firstName }} {{item.owner.lastName }}'
@@ -11,10 +14,45 @@
     ></app-card>
   </div>
   <div class="news-container">
+    <button type="button" class="btn btn-outline-dark" data-toggle="modal" data-target="#modal">
+      Hacer publicación
+    </button>
+    <!-- Modal -->
+    <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title" id="exampleModalLongTitle">¿Que estás haciendo?</h1>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form [formGroup]='postForm' (ngSubmit)="onSubmit()">
+              <div class="form-group">
+                <label for="url">Pega enlace web de la imagen</label>
+                <input formControlName="url" type="text" class="form-control" id="url" placeholder="https://www.example.com/wp.jpg">
+              </div>
+              <div class="form-group">
+                <label for="comment">Comentario</label>
+                <textarea formControlName="comment" class="form-control" id="comment" rows="3"></textarea>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" >Cerrar</button>
+                <button type="submit" class="btn btn-primary" [disabled]="!postForm.valid">Publicar</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
    <div class="title-container">
      <h1 class="title">BBC News</h1>
    </div>
-   <div class="card-news-container">
+  <div class="spinner">
+    <mat-spinner *ngIf="loadingNews"></mat-spinner>
+  </div>
+   <div class="card-news-container" *ngIf="!loadingNews">
     <app-card-news *ngFor="let item of arrayNews"
       newsTitle= "{{item.title}}"
       newsText= "{{item.description}}"

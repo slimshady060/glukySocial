@@ -1,0 +1,22 @@
+.container {
+  margin-top: 20px;
+  width: 40%;
+  flex-wrap: wrap;
+  height: 100vh;
+  overflow: auto;
+
+  .spinner{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .card-item {
+    width: 40%;
+    margin: 15px;
+  }
+}
+
+::-webkit-scrollbar {
+  display: none;
+}

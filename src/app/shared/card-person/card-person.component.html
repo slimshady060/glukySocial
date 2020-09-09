@@ -1,0 +1,13 @@
+
+<mat-card>
+  <mat-card-content class="card-content">
+    <div class="profile-content">
+      <img mat-card-avatar class="picture-profile" [style.backgroundImage]="'url(' + imageUrl + ')'">
+      <div class="info-content">
+        <mat-card-title>{{ fullName }}</mat-card-title>
+        <mat-card-subtitle>{{ email }}</mat-card-subtitle>
+      </div>
+    </div>
+    <button class="btn btn-primary follow-btn">Seguir</button>
+  </mat-card-content>
+</mat-card>

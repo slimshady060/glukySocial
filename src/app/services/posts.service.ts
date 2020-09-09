@@ -13,5 +13,8 @@ export class PostService {
    return this.http.get(`${environment.baseDummyApi}/post`);
   }
 
+  getPersonsList(): Observable<any> {
+    return this.http.get(`${environment.baseDummyApi}/user`);
+  }
 
 }

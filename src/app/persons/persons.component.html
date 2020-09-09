@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="spinner">
+    <mat-spinner *ngIf="loadingList"></mat-spinner>
+  </div>
+  <div *ngIf="!loadingList">
+    <app-card-person class="card-item" *ngFor="let item of arrayPersons"
+    fullName= '{{ item.firstName }} {{ item.lastName }}'
+    email = '{{ item.email }}'
+    imageUrl = '{{ item.picture }}'
+    ></app-card-person>
+  </div>
+</div>

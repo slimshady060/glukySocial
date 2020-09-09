@@ -7,28 +7,26 @@
       <div class="navbar-collapse collapse" id="navbar9">
           <ul class="navbar-nav ml-auto">
               <li class="nav-item">
-                  <a class="nav-link" routerLink="">
-                    <mat-icon aria-hidden="false">home</mat-icon>
+                <a class="nav-link"> {{ userEmail }} </a>
+            </li>
+              <li class="nav-item">
+                  <a class="nav-link" routerLink="/main/home" >
+                    <mat-icon aria-hidden="false" routerLinkActive="active-link">home</mat-icon>
                   </a>
               </li>
               <li class="nav-item">
-                  <a class="nav-link" routerLink="">
-                    <mat-icon aria-hidden="false" aria-label="Messaje icon">mail_outline</mat-icon>
+                  <a class="nav-link" routerLink="/main/messages" >
+                    <mat-icon aria-hidden="false" routerLinkActive="active-link" aria-label="Messaje icon">mail_outline</mat-icon>
                   </a>
               </li>
               <li class="nav-item">
-                  <a class="nav-link" routerLink="">
-                    <mat-icon aria-hidden="false" aria-label="people icon">people_outline</mat-icon>
+                  <a class="nav-link" routerLink="/main/persons">
+                    <mat-icon aria-hidden="false" routerLinkActive="active-link" aria-label="people icon">people_outline</mat-icon>
                   </a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" routerLink="">
-                  <mat-icon aria-hidden="false" aria-label="favorite icon">favorite_border</mat-icon>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" routerLink="">
-                  <mat-icon aria-hidden="false" aria-label="Exit icon">exit_to_app</mat-icon>
+                  <mat-icon aria-hidden="false" aria-label="Exit icon" (click)="logout()">exit_to_app</mat-icon>
                 </a>
               </li>
           </ul>

@@ -1,26 +1,14 @@
-<!-- <div class="card" style="width: 18rem;">
-  <div>
-
-  </div>
-  <img class="card-img-top" src="https://img.dummyapi.io/photo-1574457547512-5b1646994eea.jpg" alt="Card image cap">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
-  </div>
-</div> -->
-
 <mat-card class="example-card">
   <mat-card-header>
     <div mat-card-avatar class="example-header-image" [style.backgroundImage]="'url(' + pictureOwner + ')'"></div>
     <mat-card-title>{{ owner }}</mat-card-title>
     <mat-card-subtitle>{{ datePublic }}</mat-card-subtitle>
   </mat-card-header>
-  <img mat-card-image src="{{ urlImge }}" alt="Photo of a Shiba Inu">
+  <img mat-card-image src="{{ urlImge }}" alt="Photo">
   <div class="favorites-container">
     <mat-icon color="warn">favorite</mat-icon> 
     <div class="favorite-total">
-      {{ likes }} Me gusta
+      {{ likes | number}} Me gusta
     </div>
   </div>
   <mat-card-content>
@@ -29,8 +17,10 @@
     </p>
   </mat-card-content>
   <mat-card-actions class="actions-container">
-    <mat-icon>favorite_border</mat-icon>
-    <mat-icon> comment</mat-icon>
-    <mat-icon>share</mat-icon>
+    <mat-icon  (click)="changeFillColor()" class="pointer" [ngClass]="{'fill-color': fillColor}">
+      {{ favoriteType }}
+    </mat-icon>
+    <mat-icon class="pointer"> comment</mat-icon>
+    <mat-icon class="pointer">share</mat-icon>
   </mat-card-actions>
 </mat-card>
